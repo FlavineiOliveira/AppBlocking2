@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBlocking2.Pages.BlockingPage">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ListaTela}">
+            <ListView.Header>
+                
+                <StackLayout>
+                    <Label Text="{Binding DescricaoQueue}"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" />
+
+                    <Button Command="{Binding AdicionarNumeroCommand}"
+                            Text="Adicionar Texto na lista" />
+
+                    <Button Command="{Binding InterromperNavegarCommand}"
+                            Text="Interromper e navegar próxima tela" />
+
+                    <Button Command="{Binding VoltarTelaCommand}"
+                            Text="Voltar tela" />
+
+                </StackLayout>
+                
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                
+                <DataTemplate>
+                    <TextCell Text="{Binding .}" />
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
